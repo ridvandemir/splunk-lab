@@ -1,6 +1,7 @@
 # splunk-lab
 
 Objective
+
 The Splunk Lab project aimed to establish a comprehensive environment for exploring Splunk’s data ingestion and analysis capabilities. The primary focus was on configuring Splunk components (Search Head, Indexer, and Universal Forwarders) to forward logs from Linux and Windows machines. The lab was designed to explore Splunk's diverse data input mechanisms, including forwarding logs, running scripts to collect data, sending data via HTTP, and configuring Firewall inputs for real-time log ingestion.
 
 Skills Learned
