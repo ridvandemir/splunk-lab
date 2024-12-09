@@ -1,5 +1,4 @@
 # splunk-lab
-Forwarding data Splunk in different ways
 
 Objective
 The Splunk Lab project aimed to establish a comprehensive environment for exploring Splunk’s data ingestion and analysis capabilities. The primary focus was on configuring Splunk components (Search Head, Indexer, and Universal Forwarders) to forward logs from Linux and Windows machines. The lab was designed to explore Splunk's diverse data input mechanisms, including forwarding logs, running scripts to collect data, sending data via HTTP, and configuring Firewall inputs for real-time log ingestion.
@@ -18,6 +17,6 @@ Tools Used
 - Splunk Enterprise for log management, analysis, and querying.
 - Splunk Universal Forwarder for log forwarding from Windows and Linux machines.
 
-Diagram
+Network Diagram
 
 ![splunk_lab](https://github.com/user-attachments/assets/3ad378b2-500b-481a-ba74-b2f689f43fa5)
