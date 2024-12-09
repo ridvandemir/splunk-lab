@@ -20,4 +20,4 @@ Tools Used
 
 Diagram
 
-![splunk_lab](https://github.com/user-attachments/assets/4bf810ee-4084-46cb-ba3c-5ab691d2c59a)
+![splunk_lab](https://github.com/user-attachments/assets/3ad378b2-500b-481a-ba74-b2f689f43fa5)
