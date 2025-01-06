@@ -22,3 +22,13 @@ Tools Used
 Network Diagram
 
 ![splunk_lab](https://github.com/user-attachments/assets/3ad378b2-500b-481a-ba74-b2f689f43fa5)
+
+Steps
+
+1-Installation and Setup of Virtual Machines
+
+  - For the Linux machines, Ubuntu 22.04 and for the Windows machine Windows 10 were installed on VirtuelBox as virtual machines.
+  - Splunk Enterprise was installed as Seach Head and Indexer on the Linux machine to monitor the logs.
+  - Universal Forwarder was installed on Linux and Windows 10 machine to send logs to Splunk.
+  - 'Bridged Network' was selected as network.
+  - After installing virtual machines, we saw that they were reachable with the ‘ping’ command.
