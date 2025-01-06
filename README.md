@@ -27,10 +27,10 @@ Steps
 
 1-Installation and Setup of Virtual Machines
 - For the Linux machines, Ubuntu 22.04 and for the Windows machine Windows 10 were installed on VirtuelBox as virtual machines.
+- As a network ‘NAT Network' was selected and static IP address was determined on each virtual machine.
+- After installing virtual machines, we saw that they were reachable with the ‘ping’ command.
 - Splunk Enterprise was installed as Seach Head and Indexer on the Linux machine to monitor the logs.
 - Universal Forwarder was installed on Linux and Windows 10 machine to send logs to Splunk.
-- After selecting ‘NAT Network' as network, static IP address was determined on each virtual machine.
-- After installing virtual machines, we saw that they were reachable with the ‘ping’ command.
 
 2-Splunk Forwarder on Linux machines
 - First, I changed the IP address to static IP.
