@@ -45,7 +45,7 @@ Steps
 - I planed to monitor scripted inputs from first Linux machine and security logs from second Linux machine. So, I created inputs.conf and outputs.conf for both of them. I also created 'lab' under apps to manage forwarding effectively. Scripts should be under $SPLUNK_HOME/etc/apps/lab/bin directory. I used a common script for this lab.
   - For the first Linux (IP:192.168.2.10) 
   - /opt/splunkforwarder/etc/apps/lab/inputs.conf
-    - [script://./bin/log_generate.py]
+    - [script://./bin/log-generate.py]
     - interval=120
     - sourcetype=script
     - disabled=0
