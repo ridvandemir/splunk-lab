@@ -8,7 +8,7 @@ Skills Learned
 
 - Proficiency in configuring and managing Splunk components (Search Head, Indexer, and Universal Forwarder).
 - Practical experience in forwarding logs from Linux and Windows systems.
-- Understanding of various Splunk input possibilities, such as monitoring files, scripted inputs and network inputs.
+- Understanding of various Splunk input possibilities, such as monitoring files and scripted inputs.
 - Hands-on knowledge of setting up and configuring Splunk infrastructure for effective data collection and analysis.
 - Enhanced ability to troubleshoot and optimize log ingestion workflows in Splunk.
 
@@ -41,4 +41,20 @@ Steps
   - sudo –u splunkfwd bash #I switched to splunkfwd user
   - $SPLUNK_HOME/bin/splunk start –accept-license
 - I activated 'boot start'.
-  - sudo $SPLUNK_HOME/bin/splunk enable boot-start -user splunkfwd  
+  - sudo $SPLUNK_HOME/bin/splunk enable boot-start -user splunkfwd
+- I planed to monitor scripted inputs from first Linux machine and security logs from second Linux machine. So, I created inputs.conf and outputs.conf for both of them. I also created 'lab' under apps to manage forwarding effectively. Scripts should be under $SPLUNK_HOME/etc/apps/lab/bin directory. I used a common script for this lab.
+  - For the first Linux (IP:192.168.2.10) 
+  - /opt/splunkforwarder/etc/apps/lab/inputs.conf
+    - [script://./bin/log_generate.py]
+    - interval=120
+    - sourcetype=script
+    - disabled=0
+    - index=linux
+
+3-Splunk Forwarder on Wondows machine
+- First, I changed the IP address to static IP.
+  - Internet Settings>Change Adapter Options>Ethernet>Properties>IPv4 Properties>Manual
+  - IP:192.168.2.12
+- I installed Splunk Forwarder
+  - Receiving Server> Host/IP: 192.168.2.20, Port:9997
+
