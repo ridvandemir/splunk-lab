@@ -21,7 +21,7 @@ Tools Used
 
 Network Diagram
 
-![splunk_lab](https://github.com/user-attachments/assets/3ad378b2-500b-481a-ba74-b2f689f43fa5)
+![splunk_lab drawio](https://github.com/user-attachments/assets/259e2b7d-bd00-42ea-a4e0-bcb41c588ea6)
 
 Steps
 
