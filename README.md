@@ -74,4 +74,4 @@ Steps
   - $SPLUNK_HOME/bin/splunk start –accept-license
 - I activated 'boot start'.
   - sudo $SPLUNK_HOME/bin/splunk enable boot-start -user splunk
-- Now that I installed Search Head on a single machine, I must connect Indexer to Searh Head. So that I can run the search query in my Indexer. For this purpose, I created distsearch.conf under $SPLUNK_HOME/etc/system/local directory.
+- Now that I installed Search Head on a single machine, I must connect Indexer to Searh Head. So that I can run the search query in my Indexer. For this purpose, I created distsearch.conf along with inputs.conf and web.conf under $SPLUNK_HOME/etc/apps/lab/local directory.
