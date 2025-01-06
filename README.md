@@ -52,7 +52,7 @@ Steps
   - Receiving Server> Host/IP: 192.168.2.20, Port:9997
 - I then configured inputs.conf under $SPLUNK_HOME/etc/apps/lab/local directory
 
-4-Indexer Installation and Configuration
+4-Indexer
 - First, I changed the IP address to static IP.
   - sudo nano /etc/netplan/00-installer-config.yaml
   - IP:192.168.2.20
@@ -62,3 +62,16 @@ Steps
   - $SPLUNK_HOME/bin/splunk start –accept-license
 - I activated 'boot start'.
   - sudo $SPLUNK_HOME/bin/splunk enable boot-start -user splunk
+- I configured Indexer to get the logs from universal forwarders. For this purpose, I created inputs.conf and indexes.conf under $SPLUNK_HOME/etc/apps/lab/local directory.
+
+5-Search Head
+- First, I changed the IP address to static IP.
+  - sudo nano /etc/netplan/00-installer-config.yaml
+  - IP:192.168.2.21
+- I installed Splunk and ran it.
+  - sudo dpkg -i <splunk .deb folder>
+  - sudo –u splunk bash #I switched to splunk user
+  - $SPLUNK_HOME/bin/splunk start –accept-license
+- I activated 'boot start'.
+  - sudo $SPLUNK_HOME/bin/splunk enable boot-start -user splunk
+- Now that I installed Search Head on a single machine, I must connect Indexer to Searh Head. So that I can run the search query in my Indexer. For this purpose, I created distsearch.conf under $SPLUNK_HOME/etc/system/local directory.
