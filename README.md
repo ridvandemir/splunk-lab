@@ -26,9 +26,19 @@ Network Diagram
 Steps
 
 1-Installation and Setup of Virtual Machines
+- For the Linux machines, Ubuntu 22.04 and for the Windows machine Windows 10 were installed on VirtuelBox as virtual machines.
+- Splunk Enterprise was installed as Seach Head and Indexer on the Linux machine to monitor the logs.
+- Universal Forwarder was installed on Linux and Windows 10 machine to send logs to Splunk.
+- After selecting ‘NAT Network' as network, static IP address was determined on each virtual machine.
+- After installing virtual machines, we saw that they were reachable with the ‘ping’ command.
 
-  - For the Linux machines, Ubuntu 22.04 and for the Windows machine Windows 10 were installed on VirtuelBox as virtual machines.
-  - Splunk Enterprise was installed as Seach Head and Indexer on the Linux machine to monitor the logs.
-  - Universal Forwarder was installed on Linux and Windows 10 machine to send logs to Splunk.
-  - 'Bridged Network' was selected as network.
-  - After installing virtual machines, we saw that they were reachable with the ‘ping’ command.
+2-Splunk Forwarder on Linux machines
+- First, I changed the IP address to static IP.
+  - sudo nano /etc/netplan/00-installer-config.yaml
+  - IP:192.168.2.10, IP:192.168.2.11
+- I installed Splunk Forwarder and ran it.
+  - sudo dpkg -i <splunkforwarder .deb folder>
+  - sudo –u splunkfwd bash #I switched to splunkfwd user
+  - $SPLUNK_HOME/bin/splunk start –accept-license
+- I activated 'boot start'.
+  - sudo $SPLUNK_HOME/bin/splunk enable boot-start -user splunkfwd  
