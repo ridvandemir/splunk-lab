@@ -42,7 +42,7 @@ Steps
   - $SPLUNK_HOME/bin/splunk start –accept-license
 - I activated 'boot start'.
   - sudo $SPLUNK_HOME/bin/splunk enable boot-start -user splunkfwd
-- I planed to monitor scripted inputs from first Linux machine and security logs from second Linux machine. So, I created inputs.conf and outputs.conf for both of them. I also created 'lab' under apps to manage forwarding effectively. Scripts should be under $SPLUNK_HOME/etc/apps/lab/bin directory. I used a log generating script for this lab.
+- I planed to monitor scripted inputs from first Linux machine and security logs from second Linux machine. For this purpose, I created inputs.conf and outputs.conf under $SPLUNK_HOME/etc/apps/lab/local directory for each of them. I created this 'lab' under apps to manage forwarding effectively. Remember to place scripts under $SPLUNK_HOME/etc/apps/lab/bin directory. I used a log generating script for this lab.
 
 3-Splunk Forwarder on Windows machine
 - First, I changed the IP address to static IP.
@@ -50,6 +50,7 @@ Steps
   - IP:192.168.2.12
 - I installed Splunk Forwarder
   - Receiving Server> Host/IP: 192.168.2.20, Port:9997
+- I then configured inputs.conf under $SPLUNK_HOME/etc/apps/lab/local directory
 
 4-Indexer Installation and Configuration
 - First, I changed the IP address to static IP.
