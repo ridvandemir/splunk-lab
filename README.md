@@ -42,19 +42,22 @@ Steps
   - $SPLUNK_HOME/bin/splunk start –accept-license
 - I activated 'boot start'.
   - sudo $SPLUNK_HOME/bin/splunk enable boot-start -user splunkfwd
-- I planed to monitor scripted inputs from first Linux machine and security logs from second Linux machine. So, I created inputs.conf and outputs.conf for both of them. I also created 'lab' under apps to manage forwarding effectively. Scripts should be under $SPLUNK_HOME/etc/apps/lab/bin directory. I used a common script for this lab.
-  - For the first Linux (IP:192.168.2.10) 
-  - /opt/splunkforwarder/etc/apps/lab/inputs.conf
-    - [script://./bin/log-generate.py]
-    - interval=120
-    - sourcetype=script
-    - disabled=0
-    - index=linux
+- I planed to monitor scripted inputs from first Linux machine and security logs from second Linux machine. So, I created inputs.conf and outputs.conf for both of them. I also created 'lab' under apps to manage forwarding effectively. Scripts should be under $SPLUNK_HOME/etc/apps/lab/bin directory. I used a log generating script for this lab.
 
-3-Splunk Forwarder on Wondows machine
+3-Splunk Forwarder on Windows machine
 - First, I changed the IP address to static IP.
   - Internet Settings>Change Adapter Options>Ethernet>Properties>IPv4 Properties>Manual
   - IP:192.168.2.12
 - I installed Splunk Forwarder
   - Receiving Server> Host/IP: 192.168.2.20, Port:9997
 
+4-Indexer Installation and Configuration
+- First, I changed the IP address to static IP.
+  - sudo nano /etc/netplan/00-installer-config.yaml
+  - IP:192.168.2.20
+- I installed Splunk and ran it.
+  - sudo dpkg -i <splunk .deb folder>
+  - sudo –u splunk bash #I switched to splunk user
+  - $SPLUNK_HOME/bin/splunk start –accept-license
+- I activated 'boot start'.
+  - sudo $SPLUNK_HOME/bin/splunk enable boot-start -user splunk
