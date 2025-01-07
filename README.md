@@ -2,7 +2,7 @@
 
 Objective
 
-The Splunk Lab project aimed to establish a comprehensive environment for exploring Splunk’s data ingestion and analysis capabilities. The primary focus was on configuring Splunk components (Search Head, Indexer, and Universal Forwarders) to forward logs from Linux and Windows machines. The lab was designed to explore Splunk's diverse data input mechanisms, including monitoring files, running scripts to collect data and configuring network inputs like Firewall for real-time log ingestion.
+The Splunk Lab project aimed to establish a distributed environment for exploring Splunk’s data ingestion and analysis capabilities. The primary focus was on configuring Splunk components (Search Head, Indexer, and Universal Forwarders) to forward logs from Linux and Windows machines. The lab was designed to explore Splunk's diverse data input mechanisms, including monitoring files, running scripts to collect data.
 
 Skills Learned
 
@@ -74,4 +74,4 @@ Steps
   - $SPLUNK_HOME/bin/splunk start –accept-license
 - I activated 'boot start'.
   - sudo $SPLUNK_HOME/bin/splunk enable boot-start -user splunk
-- Now that I installed Search Head on a single machine, I must connect Indexer to Searh Head. So that I can run the search query in my Indexer. For this purpose, I created distsearch.conf along with inputs.conf and web.conf under $SPLUNK_HOME/etc/apps/lab/local directory.
+- Now that I installed Search Head on a single machine, I must connect Indexer to Search Head. So that I can run the query in my Indexer. For this purpose, I created distsearch.conf along with inputs.conf and web.conf under $SPLUNK_HOME/etc/apps/lab/local directory.
