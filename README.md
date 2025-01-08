@@ -17,7 +17,7 @@ Tools Used
 - Virtual Machine to deploy lab environment
 - Splunk Enterprise for log management, analysis, and querying.
 - Splunk Universal Forwarder for log forwarding from Windows and Linux machines.
-- PuTTY terminal emulator to connect to servers.
+- VS Code terminal emulator to connect to servers.
 
 Network Diagram
 
@@ -42,7 +42,7 @@ Steps
   - $SPLUNK_HOME/bin/splunk start –accept-license
 - I activated 'boot start'.
   - sudo $SPLUNK_HOME/bin/splunk enable boot-start -user splunkfwd
-- I planed to monitor scripted inputs from first Linux machine and security logs from second Linux machine. For this purpose, I created inputs.conf and outputs.conf under $SPLUNK_HOME/etc/apps/lab/local directory for each of them. I created this 'lab' under apps to manage forwarding effectively. Remember to place scripts under $SPLUNK_HOME/etc/apps/lab/bin directory. I used a log generating script for this lab.
+- I planed to monitor scripted inputs from first Linux machine and security logs from second Linux machine. For this purpose, I created inputs.conf and outputs.conf under $SPLUNK_HOME/etc/apps/lab/local directory for each of them. I created this 'lab' under apps to manage forwarding effectively. We should also remember to place scripts under $SPLUNK_HOME/etc/apps/lab/bin directory. I used a random log generating script for this lab.
 
 3-Splunk Forwarder on Windows machine
 - First, I changed the IP address to static IP.
