@@ -26,9 +26,9 @@ Network Diagram
 Steps
 
 1-Installation and Setup of Virtual Machines
-- For the Linux machines, Ubuntu 22.04 and for the Windows machine Windows 10 were installed on VirtuelBox as virtual machines.
+- For the Linux machines Ubuntu 22.04 and for the Windows machine Windows 10 were installed on VirtuelBox as virtual machines.
 - As a network ‘NAT Network' was selected and static IP address was determined on each virtual machine.
-- After installing virtual machines, we saw that they were reachable with the ‘ping’ command.
+- After installing virtual machines, I saw that they were reachable with the ‘ping’ command.
 - Splunk Enterprise was installed as Seach Head and Indexer on the Linux machine to monitor the logs.
 - Universal Forwarder was installed on Linux and Windows 10 machine to send logs to Splunk.
 
@@ -37,7 +37,7 @@ Steps
   - sudo nano /etc/netplan/00-installer-config.yaml
   - IP:192.168.2.10, IP:192.168.2.11
 - I installed Splunk Forwarder and ran it.
-  - sudo dpkg -i <splunkforwarder .deb folder>
+  - sudo dpkg -i <splunkforwarder.deb folder>
   - sudo –u splunkfwd bash #I switched to splunkfwd user
   - $SPLUNK_HOME/bin/splunk start –accept-license
 - I activated 'boot start'.
@@ -57,7 +57,7 @@ Steps
   - sudo nano /etc/netplan/00-installer-config.yaml
   - IP:192.168.2.20
 - I installed Splunk and ran it.
-  - sudo dpkg -i <splunk .deb folder>
+  - sudo dpkg -i <splunk.deb folder>
   - sudo –u splunk bash #I switched to splunk user
   - $SPLUNK_HOME/bin/splunk start –accept-license
 - I activated 'boot start'.
@@ -69,9 +69,9 @@ Steps
   - sudo nano /etc/netplan/00-installer-config.yaml
   - IP:192.168.2.21
 - I installed Splunk and ran it.
-  - sudo dpkg -i <splunk .deb folder>
+  - sudo dpkg -i <splunk.deb folder>
   - sudo –u splunk bash #I switched to splunk user
   - $SPLUNK_HOME/bin/splunk start –accept-license
 - I activated 'boot start'.
   - sudo $SPLUNK_HOME/bin/splunk enable boot-start -user splunk
-- Now that I installed Search Head on a single machine, I must connect Indexer to Search Head. So that I can run the query in my Indexer. For this purpose, I created distsearch.conf along with inputs.conf and web.conf under $SPLUNK_HOME/etc/apps/lab/local directory.
+- Now that I installed Search Head on a seperate machine, I must connect Indexer to Search Head. So that I can run the query in my Indexer. For this purpose, I created distsearch.conf along with inputs.conf and web.conf under $SPLUNK_HOME/etc/apps/lab/local directory.
