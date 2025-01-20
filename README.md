@@ -31,7 +31,7 @@ Steps
 - After installing virtual machines, I saw that they were reachable with the ‘ping’ command.
 - Splunk Enterprise was installed as Indexer and Seach Head on the Linux machine to monitor the logs.
 - Universal Forwarder was installed on Linux and Windows 10 machine to send logs to Splunk.
-- I created 'lab' app under $SPLUNK_HOME/etc/apps/ to manage forwarding effectively.
+- I created 'splunk-lab' app under $SPLUNK_HOME/etc/apps/ to manage forwarding.
 
 2-Indexer
 - First, I changed the IP address to static IP and added 'splunk' user.
