@@ -29,30 +29,10 @@ Steps
 - For the Linux machines Ubuntu 22.04 and for the Windows machine Windows 10 were installed on VirtuelBox as virtual machines.
 - As a network ‘NAT Network' was selected and static IP address was determined on each virtual machine.
 - After installing virtual machines, I saw that they were reachable with the ‘ping’ command.
-- Splunk Enterprise was installed as Seach Head and Indexer on the Linux machine to monitor the logs.
+- Splunk Enterprise was installed as Indexer and Seach Head on the Linux machine to monitor the logs.
 - Universal Forwarder was installed on Linux and Windows 10 machine to send logs to Splunk.
 
-2-Splunk Forwarder on Linux machines
-- First, I changed the IP address to static IP.
-  - sudo nano /etc/netplan/00-installer-config.yaml
-  - IP:192.168.2.10, IP:192.168.2.11
-- I installed Splunk Forwarder and ran it.
-  - sudo dpkg -i <splunkforwarder.deb folder>
-  - sudo –u splunkfwd bash #I switched to splunkfwd user
-  - $SPLUNK_HOME/bin/splunk start –accept-license
-- I activated 'boot start'.
-  - sudo $SPLUNK_HOME/bin/splunk enable boot-start -user splunkfwd
-- I planed to monitor scripted inputs from first Linux machine and security logs from second Linux machine. For this purpose, I created inputs.conf and outputs.conf under $SPLUNK_HOME/etc/apps/lab/local directory for each of them. I created this 'lab' under apps to manage forwarding effectively. We should also remember to place scripts under $SPLUNK_HOME/etc/apps/lab/bin directory. I used a random log generating script for this lab.
-
-3-Splunk Forwarder on Windows machine
-- First, I changed the IP address to static IP.
-  - Internet Settings>Change Adapter Options>Ethernet>Properties>IPv4 Properties>Manual
-  - IP:192.168.2.12
-- I installed Splunk Forwarder
-  - Receiving Server> Host/IP: 192.168.2.20, Port:9997
-- I then configured inputs.conf under $SPLUNK_HOME/etc/apps/lab/local directory
-
-4-Indexer
+2-Indexer
 - First, I changed the IP address to static IP.
   - sudo nano /etc/netplan/00-installer-config.yaml
   - IP:192.168.2.20
@@ -64,7 +44,7 @@ Steps
   - sudo $SPLUNK_HOME/bin/splunk enable boot-start -user splunk
 - I configured Indexer to get the logs from universal forwarders. For this purpose, I created inputs.conf and indexes.conf under $SPLUNK_HOME/etc/apps/lab/local directory.
 
-5-Search Head
+3-Search Head
 - First, I changed the IP address to static IP.
   - sudo nano /etc/netplan/00-installer-config.yaml
   - IP:192.168.2.21
@@ -75,3 +55,25 @@ Steps
 - I activated 'boot start'.
   - sudo $SPLUNK_HOME/bin/splunk enable boot-start -user splunk
 - Now that I installed Search Head on a seperate machine, I must connect Indexer to Search Head. So that I can run the query in my Indexer. For this purpose, I created distsearch.conf along with inputs.conf and web.conf under $SPLUNK_HOME/etc/apps/lab/local directory.
+
+4-Splunk Forwarder on Linux machines
+- First, I changed the IP address to static IP.
+  - sudo nano /etc/netplan/00-installer-config.yaml
+  - IP:192.168.2.10, IP:192.168.2.11
+- I installed Splunk Forwarder and ran it.
+  - sudo dpkg -i <splunkforwarder.deb folder>
+  - sudo –u splunkfwd bash #I switched to splunkfwd user
+  - $SPLUNK_HOME/bin/splunk start –accept-license
+- I activated 'boot start'.
+  - sudo $SPLUNK_HOME/bin/splunk enable boot-start -user splunkfwd
+- I planed to monitor scripted inputs from first Linux machine and security logs from second Linux machine. For this purpose, I created inputs.conf and outputs.conf under $SPLUNK_HOME/etc/apps/lab/local directory for each of them. I created this 'lab' under apps to manage forwarding effectively. We should also remember to place scripts under $SPLUNK_HOME/etc/apps/lab/bin directory. I used a random log generating script for this lab.
+
+5-Splunk Forwarder on Windows machine
+- First, I changed the IP address to static IP.
+  - Internet Settings>Change Adapter Options>Ethernet>Properties>IPv4 Properties>Manual
+  - IP:192.168.2.12
+- I installed Splunk Forwarder
+  - Receiving Server> Host/IP: 192.168.2.20, Port:9997
+- I then configured inputs.conf under $SPLUNK_HOME/etc/apps/lab/local directory
+
+
